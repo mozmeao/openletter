@@ -29,6 +29,10 @@ $font-path: '../../fonts';
     @include text-body-lg;
 }
 
+.c-share {
+    margin: $layout-md 0;
+}
+
 .c-letter-form {
     input[type="text"],
     input[type="email"] {
