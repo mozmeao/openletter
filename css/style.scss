@@ -1,0 +1,77 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+$image-path: '../../img';
+$font-path: '../../fonts';
+
+@import '@mozilla-protocol/core/protocol/css/protocol';
+@import '@mozilla-protocol/core/protocol/css/includes/lib';
+@import '@mozilla-protocol/core/protocol/css/components/button';
+@import '@mozilla-protocol/core/protocol/css/templates/multi-column';
+@import '@mozilla-protocol/core/protocol/css/components/footer';
+@import '~@mozilla-protocol/core/protocol/css/components/logos/wordmark';
+@import '~@mozilla-protocol/core/protocol/css/components/logos/wordmark-product-mozilla';
+
+@import "footer";
+
+.c-letter-section {
+    padding: $layout-sm 0;
+
+    @media #{$mq-md} {
+        padding: $layout-md 0;
+    }
+}
+
+@media #{$mq-md} {
+    .c-signatures-inner {
+        display: grid;
+        grid-template-columns: 25% 75%;
+        column-gap: $layout-md;
+    }
+}
+
+.c-signature-count {
+    background: $color-black;
+    border-radius: $border-radius-lg;
+    color: $color-white;
+    height: fit-content;
+    margin-bottom: $layout-md;
+    padding: $spacing-md;
+    text-align: center;
+
+    strong {
+        @include font-mozilla;
+        @include text-title-sm;
+        display: block;
+    }
+}
+
+.c-signatures-list {
+    h2 span {
+        @include text-title-2xs;
+        display: block;
+        font-weight: normal;
+    }
+
+    li {
+        margin-bottom: .5em;
+    }
+
+    cite {
+        font-weight: bold;
+        font-style: normal;
+    }
+}
+
+
+// Utility classes
+.mzp-u-list-styled {
+    &.u-list-type-upper-alpha {
+        list-style-type: upper-alpha;
+    }
+
+    &.u-list-type-lower-alpha {
+        list-style-type: upper-alpha;
+    }
+}
