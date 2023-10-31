@@ -5,21 +5,38 @@
 $image-path: '../../img';
 $font-path: '../../fonts';
 
-@import '@mozilla-protocol/core/protocol/css/protocol';
-@import '@mozilla-protocol/core/protocol/css/includes/lib';
-@import '@mozilla-protocol/core/protocol/css/components/button';
-@import '@mozilla-protocol/core/protocol/css/templates/multi-column';
-@import '@mozilla-protocol/core/protocol/css/components/footer';
+@import '~@mozilla-protocol/core/protocol/css/protocol';
+@import '~@mozilla-protocol/core/protocol/css/includes/lib';
+@import '~@mozilla-protocol/core/protocol/css/components/button';
+@import '~@mozilla-protocol/core/protocol/css/templates/multi-column';
+@import '~@mozilla-protocol/core/protocol/css/components/footer';
 @import '~@mozilla-protocol/core/protocol/css/components/logos/wordmark';
 @import '~@mozilla-protocol/core/protocol/css/components/logos/wordmark-product-mozilla';
-
-@import "footer";
+@import '~@mozilla-protocol/core/protocol/css/components/forms/button-container';
+@import '~@mozilla-protocol/core/protocol/css/components/forms/choice';
+@import '~@mozilla-protocol/core/protocol/css/components/forms/field';
+@import '~@mozilla-protocol/core/protocol/css/components/forms/form';
 
 .c-letter-section {
     padding: $layout-sm 0;
 
     @media #{$mq-md} {
         padding: $layout-md 0;
+    }
+}
+
+.c-letter-intro {
+    @include text-body-lg;
+}
+
+.c-letter-form {
+    input[type="text"],
+    input[type="email"] {
+        width: 100%;
+    }
+
+    .mzp-c-button-info {
+        margin: $spacing-md 0;
     }
 }
 

@@ -2,7 +2,7 @@
 
 {% block page_title %}Joint Statement on AI Safety and Openness{% endblock %}
 
-{% block page_desc %}{% endblock %}
+{% block page_desc %}We are at a critical juncture in AI governance. To mitigate current and future harms from AI systems, we need to embrace openness, transparency, and broad access.{% endblock %}
 
 {% block page_css %}<link rel="stylesheet" href="/css/style.scss">{% endblock %}
 
@@ -19,7 +19,7 @@
 
   <section class="c-letter-body c-letter-section">
     <div class="mzp-l-content mzp-t-content-md mzp-t-content-nospace">
-      <p>We are at a critical juncture in AI governance. To mitigate current and
+      <p class="c-letter-intro">We are at a critical juncture in AI governance. To mitigate current and
         future harms from AI systems, we need to embrace openness, transparency,
         and broad access. This needs to be a global priority.</p>
 
@@ -66,7 +66,48 @@
 
   <section id="sign" class="c-letter-form c-letter-section mzp-t-background-secondary">
     <div class="mzp-l-content mzp-t-content-md mzp-t-content-nospace">
-      form goes here
+      <form class="mzp-c-form" method="post" action="#" data-netlify="true">
+        <fieldset>
+          <div class="mzp-c-form-header">
+            <h2 class="mzp-c-form-title">Add your signature</h2>
+          </div>
+
+          <div class="mzp-l-columns mzp-t-columns-two">
+            <div class="col">
+              <div class="mzp-c-field">
+                <label class="mzp-c-field-label" for="name">Your full name</label>
+                <input class="mzp-c-field-control" type="text" name="name" id="name" value="" required>
+              </div>
+
+              <div class="mzp-c-field">
+                <label class="mzp-c-field-label" for="email">Email address (professional)</label>
+                <input class="mzp-c-field-control" type="email" name="email" id="email" value="" placeholder="name@example.com" required>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="mzp-c-field">
+                <label class="mzp-c-field-label" for="title">Job title</label>
+                <input class="mzp-c-field-control" type="text" name="title" id="title" value="">
+              </div>
+
+              <div class="mzp-c-field">
+                <label class="mzp-c-field-label" for="affiliation">Affiliation</label>
+                <input class="mzp-c-field-control" type="text" name="affiliation" id="affiliation" value="" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="mzp-c-button-container mzp-l-align-center mzp-l-stretch">
+            <p class="mzp-c-button-info">
+              By submitting this form you agree to Mozilla handling your information
+              as explained in <a href="https://www.mozilla.org/privacy/websites/" target="_blank">this privacy notice</a>.
+            </p>
+
+            <button class="mzp-c-button mzp-t-xl" type="submit">Sign the letter</button>
+          </div>
+        </fieldset>
+      </form>
     </div>
   </section>
 
@@ -74,7 +115,7 @@
     <div class="mzp-l-content mzp-t-content-md mzp-t-content-nospace">
       <div class="c-signatures-inner">
         <aside class="c-signature-count">
-          <strong>62</strong> signatures
+          <strong>63</strong> signatures
         </aside>
 
         <div class="c-signatures-list">
@@ -142,6 +183,7 @@
             <li><cite>Saoud Khalifah</cite>, Mozilla</li>
             <li><cite>Irene Solaiman</cite>, Hugging Face</li>
             <li><cite>Merouane Debbah</cite>, Khalifah University</li>
+            <li><cite>Felix Reda</cite>, Former Member of the European Parliament</li>
           </ol>
         </div>
       </div>
