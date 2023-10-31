@@ -46,3 +46,4 @@
 [[redirects]]
   from = "/"
   to = "/letter/"
+  force = true
