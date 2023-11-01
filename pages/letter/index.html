@@ -6,6 +6,9 @@
 
 {% block page_css %}<link rel="stylesheet" href="/css/style.scss">{% endblock %}
 
+{% set share_text = 'The future of #AI governance is here. Join a global community of policymakers, engineers, activists, and more in ensuring that AI remains open and accessible to all. \n\n' | urlencode %}
+{% set share_url = 'https://open.mozilla.org/letter/' %}
+
 {% block content %}
 <article class="c-letter">
   <header class="c-letter-head c-letter-section mzp-t-background-secondary">
@@ -64,7 +67,17 @@
       <p>When it comes to AI safety and security, openness is an antidote, not a poison.</p>
 
       <aside class="c-share">
-        <a rel="external nofollow noopener" target="_blank" class="mzp-c-button mzp-t-secondary mzp-t-sm" href="https://twitter.com/intent/tweet/?text=The%20state%20of%20%23AI%20governance%20is%20at%20a%20pivotal%20moment.%20Protecting%20openness%20in%20AI%20is%20the%20best%20way%20to%20ensure%20that%20billions%20of%20people%20aren%27t%20left%20behind%20by%20big%20companies%20who%20are%20only%20interested%20in%20profit.%20Join%20and%20share%20the%20call%21%20&amp;url=https://open.mozilla.org/letter&amp;via=mozilla">Share on X</a>
+        <button class="mzp-c-button mzp-t-secondary mzp-t-sm js-mastodon-share"
+          data-share-url="{{ share_url }}"
+          data-share-text="{{ share_text }}">
+          Share on Mastodon
+        </button>
+
+        <a href="https://twitter.com/intent/tweet/?text={{ share_text }}&amp;url={{ share_url }}&amp;via=mozilla"
+          rel="external nofollow noopener" target="_blank"
+          class="mzp-c-button mzp-t-secondary mzp-t-sm">
+          Share on X
+        </a>
       </aside>
     </div>
   </section>
@@ -207,3 +220,5 @@
   </section>
 </article>
 {% endblock %}
+
+{% block js %}<script src="/scripts/mastodon.js"></script>{% endblock %}
