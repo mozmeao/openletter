@@ -76,7 +76,14 @@ $font-path: '../../fonts';
         font-weight: normal;
     }
 
+    ol {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        column-gap: $spacing-lg;
+    }
+
     li {
+        @include text-body-sm;
         margin-bottom: .5em;
     }
 
