@@ -44,17 +44,15 @@ $font-path: '../../fonts';
     }
 }
 
-// Temporarily hide signature count and disable grid
-// @media #{$mq-md} {
-//     .c-signatures-inner {
-//         display: grid;
-//         grid-template-columns: 25% 75%;
-//         column-gap: $layout-md;
-//     }
-// }
+@media #{$mq-md} {
+    .c-signatures-inner {
+        display: grid;
+        grid-template-columns: 25% 75%;
+        column-gap: $layout-md;
+    }
+}
 
 .c-signature-count {
-    display: none;
     background: $color-black;
     border-radius: $border-radius-lg;
     color: $color-white;
