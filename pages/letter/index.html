@@ -84,10 +84,17 @@
 
   <section id="sign" class="c-letter-form c-letter-section mzp-t-background-secondary">
     <div class="mzp-l-content mzp-t-content-md mzp-t-content-nospace">
-      <form name="signatures" class="mzp-c-form" method="post" data-netlify="true">
+      <form name="signatures" id="signature-form" class="mzp-c-form" method="post">
         <fieldset>
           <div class="mzp-c-form-header">
             <h2 class="mzp-c-form-title">Add your signature</h2>
+          </div>
+
+          <div class="mzp-c-form-errors hidden" id="letter-errors">
+            <ul class="mzp-u-list-styled">
+              <li class="error-email-invalid hidden">Please enter a valid email address with less than 120 characters</li>
+              <li class="error-try-again-later hidden">We are sorry, but there was a problem with our system. Please try again later!</li>
+            </ul>
           </div>
 
           <div class="mzp-l-columns mzp-t-columns-two">
@@ -99,7 +106,7 @@
 
               <div class="mzp-c-field">
                 <label class="mzp-c-field-label" for="email">Email address (professional)</label>
-                <input class="mzp-c-field-control" type="email" name="email" id="email" value="" placeholder="name@example.com" required>
+                <input class="mzp-c-field-control mzp-js-email-field" type="email" name="email" id="email" value="" placeholder="name@example.com" required aria-required="true">
               </div>
             </div>
 
@@ -111,7 +118,7 @@
 
               <div class="mzp-c-field">
                 <label class="mzp-c-field-label" for="affiliation">Affiliation</label>
-                <input class="mzp-c-field-control" type="text" name="affiliation" id="affiliation" value="" required>
+                <input class="mzp-c-field-control" type="text" name="affiliation" id="affiliation" value="" required aria-required="true">
               </div>
             </div>
           </div>
@@ -126,6 +133,11 @@
           </div>
         </fieldset>
       </form>
+
+      <div id="signature-thanks" class="c-letter-thanks hidden">
+        <h3>Thanks!</h3>
+        <p>Thank you for lending your voice to this initiative. We’ll add your name to the list of signatories.</p>
+      </div>
     </div>
   </section>
 
@@ -1714,4 +1726,7 @@
 </article>
 {% endblock %}
 
-{% block js %}<script src="/scripts/mastodon.js"></script>{% endblock %}
+{% block js %}
+  <script src="/scripts/mastodon.js"></script>
+  <script src="/scripts/email.js"></script>
+{% endblock %}
