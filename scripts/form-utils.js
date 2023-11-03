@@ -103,8 +103,8 @@ function postToEmailServer(params, successCallback, errorCallback) {
     xhr.timeout = 5000;
     xhr.ontimeout = errorCallback;
     xhr.responseType = 'json';
-    xhr.setRequestHeader("Content-type", "application/json");
-    xhr.send(JSON.stringify(params));
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send(serialize(params));
 }
 
 function serialize(params) {
@@ -112,9 +112,8 @@ function serialize(params) {
     const affiliation = encodeURIComponent(params.affiliation);
     const title = encodeURIComponent(params.title);
     const email = encodeURIComponent(params.email);
-    const sourceUrl = encodeURIComponent("https://open.mozilla.org/letter/");
 
-    return `name=${name}&email=${email}&affiliation=${affiliation}&title=${title}&source_url=${sourceUrl}`
+    return `name=${name}&email=${email}&affiliation=${affiliation}&title=${title}`
 }
 
 

@@ -32,7 +32,6 @@ const EmailForm = {
     }
 
     if (error) {
-        console.log(error)
         const errorContainer = form.querySelector(".mzp-c-form-errors");
         errorContainer.classList.remove("hidden");
         errorContainer.style.display = "block";
