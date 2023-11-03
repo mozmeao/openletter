@@ -46,7 +46,7 @@ const EmailForm = {
   },
 
   validateFields: () => {
-    const email = form.querySelector('input[type="email"]').value;
+    const email = form.querySelector('input[id="email"]').value;
 
     // Really basic client side email validity check.
     if (!checkEmailValidity(email)) {

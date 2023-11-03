@@ -65,10 +65,10 @@ function postToEmailServer(params, successCallback, errorCallback) {
 
     // Emails used in automation for page-level integration tests
     // should avoid hitting basket directly.
-    if (email === 'success@example.com') {
+    if (params.email === 'success@example.com') {
         successCallback();
         return;
-    } else if (email === 'failure@example.com') {
+    } else if (params.email === 'failure@example.com') {
         errorCallback();
         return;
     }
@@ -82,7 +82,7 @@ function postToEmailServer(params, successCallback, errorCallback) {
 
         if (response) {
             if (
-                response.status === 'ok' &&
+                response.status === 'success' &&
                 e.target.status >= 200 &&
                 e.target.status < 300
             ) {
@@ -109,9 +109,9 @@ function postToEmailServer(params, successCallback, errorCallback) {
 
 function serialize(params) {
     const name = encodeURIComponent(params.name);
+    const email = encodeURIComponent(params.email);
     const affiliation = encodeURIComponent(params.affiliation);
     const title = encodeURIComponent(params.title);
-    const email = encodeURIComponent(params.email);
 
     return `name=${name}&email=${email}&affiliation=${affiliation}&title=${title}`
 }
