@@ -44,20 +44,11 @@ $font-path: '../../fonts';
     }
 }
 
-@media #{$mq-md} {
-    .c-signatures-inner {
-        display: grid;
-        grid-template-columns: 25% 75%;
-        column-gap: $layout-md;
-    }
-}
-
 .c-signature-count {
     background: $color-black;
     border-radius: $border-radius-lg;
     color: $color-white;
-    height: fit-content;
-    margin-bottom: $layout-md;
+    margin-bottom: $spacing-xl;
     padding: $spacing-md;
     text-align: center;
 
@@ -68,20 +59,18 @@ $font-path: '../../fonts';
     }
 }
 
-.c-signatures-list {
-    h2 span {
+.c-signatures-title {
+    margin-bottom: $layout-sm;
+
+    span {
         @include font-base;
         @include text-body-sm;
         display: block;
         font-weight: normal;
     }
+}
 
-    ol {
-        display: grid;
-        grid-template-columns: repeat(2, 50%);
-        column-gap: $spacing-lg;
-    }
-
+.c-signatures-list {
     li {
         @include text-body-sm;
         margin-bottom: .5em;
@@ -90,6 +79,37 @@ $font-path: '../../fonts';
     cite {
         font-weight: bold;
         font-style: normal;
+    }
+}
+
+@media #{$mq-md} {
+    .c-letter-signatures header {
+        align-items: center;
+        column-gap: $layout-lg;
+        display: grid;
+        grid-template-columns: 1fr 25%;
+
+        .c-signatures-title {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .c-signature-count {
+            grid-column: 2;
+            grid-row: 1;
+        }
+    }
+
+    .c-signatures-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: $spacing-lg;
+    }
+}
+
+@media #{$mq-lg} {
+    .c-signatures-list {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
