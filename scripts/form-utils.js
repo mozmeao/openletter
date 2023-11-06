@@ -87,8 +87,8 @@ function postToEmailServer(params, successCallback, errorCallback) {
                 e.target.status < 300
             ) {
                 successCallback();
-            } else if (response.status === 'error' && response.desc) {
-                errorCallback(response.desc);
+            } else if (response.status === 'error') {
+                errorCallback();
             } else {
                 errorCallback();
             }
