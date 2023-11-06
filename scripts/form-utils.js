@@ -61,7 +61,7 @@ function enableFormFields(form) {
 
 function postToEmailServer(params, successCallback, errorCallback) {
     const xhr = new XMLHttpRequest();
-    let url = "https://basket.allizom.org/petition/sign/";
+    let url = "https://basket.mozilla.org/petition/sign/";
 
     // Emails used in automation for page-level integration tests
     // should avoid hitting basket directly.
