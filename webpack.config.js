@@ -6,8 +6,11 @@
 
 const path = require("path");
 const HtmlBundlerPlugin = require("html-bundler-webpack-plugin");
+const fetch = require("sync-fetch");
 
 const isDev = process.env.NODE_ENV === "development";
+
+const signatures = fetch("https://basket.allizom.org/petition/signatures.json").json();
 
 module.exports = {
   mode: isDev ? "development" : "production",
@@ -91,7 +94,9 @@ module.exports = {
     new HtmlBundlerPlugin({
       entry: "pages/",
       globals: {
-        env: process.env
+        env: process.env,
+        "signatures": signatures.signatures,
+        dude: "Jefferey Lebowski"
       },
       js: {
         filename: "scripts/[name].[contenthash:8].js",
@@ -100,6 +105,10 @@ module.exports = {
         filename: "css/[name].[contenthash:8].css",
       },
       loaderOptions: {
+        data: {
+          env: process.env,
+          signatures: signatures.signatures
+        },
         root: __dirname,
         preprocessor: 'nunjucks',
         preprocessorOptions: {
