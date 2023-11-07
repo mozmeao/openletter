@@ -59,9 +59,8 @@ function enableFormFields(form) {
     }
 }
 
-function postToEmailServer(params, successCallback, errorCallback) {
+function postToEmailServer(action, params, successCallback, errorCallback) {
     const xhr = new XMLHttpRequest();
-    let url = "https://basket.mozilla.org/petition/sign/";
 
     // Emails used in automation for page-level integration tests
     // should avoid hitting basket directly.
@@ -98,7 +97,7 @@ function postToEmailServer(params, successCallback, errorCallback) {
     };
 
     xhr.onerror = errorCallback;
-    xhr.open('POST', url, true);
+    xhr.open('POST', action, true);
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     xhr.timeout = 5000;
     xhr.ontimeout = errorCallback;

@@ -58,6 +58,7 @@ const EmailForm = {
   },
 
   submit: (e) => {
+    const action = form.getAttribute('action');
     const name = form.querySelector('input[id="name"]').value;
     const email = form.querySelector('input[id="email"]').value;
     const affiliation = form.querySelector('input[id="affiliation"]').value;
@@ -84,7 +85,7 @@ const EmailForm = {
       title,
     };
 
-    postToEmailServer(params, EmailForm.handleFormSuccess, EmailForm.handleFormError);
+    postToEmailServer(action, params, EmailForm.handleFormSuccess, EmailForm.handleFormError);
   },
 
   init: () => {
