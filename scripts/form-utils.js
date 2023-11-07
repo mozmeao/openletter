@@ -7,11 +7,6 @@
 const errorList = {
     EMAIL_INVALID_ERROR: 'Invalid email address',
     EMAIL_UNKNOWN_ERROR: 'Email address not known',
-    NEWSLETTER_ERROR: 'Newsletter not selected',
-    COUNTRY_ERROR: 'Country not selected',
-    LANGUAGE_ERROR: 'Language not selected',
-    PRIVACY_POLICY_ERROR: 'Privacy policy not checked',
-    LEGAL_TERMS_ERROR: 'Terms not checked'
 };
 
 /**
@@ -66,20 +61,14 @@ function enableFormFields(form) {
 
 function postToEmailServer(params, successCallback, errorCallback) {
     const xhr = new XMLHttpRequest();
-    let url = "https://www.mozilla.org/en-US/email-mieco/";
-
-    if (params.newsletters) {
-        url = "https://basket.mozilla.org/news/subscribe/";
-    }
-
-    const { email } = params;
+    let url = "https://basket.mozilla.org/petition/sign/";
 
     // Emails used in automation for page-level integration tests
     // should avoid hitting basket directly.
-    if (email === 'success@example.com') {
+    if (params.email === 'success@example.com') {
         successCallback();
         return;
-    } else if (email === 'failure@example.com') {
+    } else if (params.email === 'failure@example.com') {
         errorCallback();
         return;
     }
@@ -93,13 +82,13 @@ function postToEmailServer(params, successCallback, errorCallback) {
 
         if (response) {
             if (
-                response.status === 'ok' &&
+                response.status === 'success' &&
                 e.target.status >= 200 &&
                 e.target.status < 300
             ) {
                 successCallback();
-            } else if (response.status === 'error' && response.desc) {
-                errorCallback(response.desc);
+            } else if (response.status === 'error') {
+                errorCallback();
             } else {
                 errorCallback();
             }
@@ -114,22 +103,17 @@ function postToEmailServer(params, successCallback, errorCallback) {
     xhr.timeout = 5000;
     xhr.ontimeout = errorCallback;
     xhr.responseType = 'json';
-
-    if (params.newsletters) {
-      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xhr.send(serialize(params));
-    } else {
-      xhr.setRequestHeader("Content-type", "application/json");
-      xhr.send(JSON.stringify(params));
-    }
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send(serialize(params));
 }
 
 function serialize(params) {
+    const name = encodeURIComponent(params.name);
     const email = encodeURIComponent(params.email);
-    const newsletters = encodeURIComponent(params.newsletters);
-    const sourceUrl = encodeURIComponent("https://future.mozilla.org");
+    const affiliation = encodeURIComponent(params.affiliation);
+    const title = encodeURIComponent(params.title);
 
-    return `email=${email}&format=H&lang=en&source_url=${sourceUrl}&newsletters=${newsletters}`
+    return `name=${name}&email=${email}&affiliation=${affiliation}&title=${title}`
 }
 
 
