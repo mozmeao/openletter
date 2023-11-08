@@ -9,6 +9,8 @@
 {% set share_text = 'The future of #AI governance is here. Join a global community of policymakers, engineers, activists, and more in ensuring that AI remains open and accessible to all. \n\n' | urlencode %}
 {% set share_url = 'https://open.mozilla.org/letter/' %}
 
+{% block main_class %}main{% endblock %}
+
 {% block content %}
 <article class="c-letter">
   <header class="c-letter-head c-letter-section mzp-t-background-secondary">
@@ -140,21 +142,101 @@
   </section>
 
   <section id="signatures" class="c-letter-signatures c-letter-section">
-    <div class="mzp-l-content mzp-t-content-xl mzp-t-content-nospace">
-      <header>
+    <div class="mzp-l-content mzp-t-content-md mzp-t-content-nospace">
+      <div class="c-letter-signatures-inner">
         <aside class="c-signature-count">
           <strong>{{ signatures.length }}</strong> signatures
         </aside>
 
-        <h2 class="c-signatures-title mzp-u-title-sm">Signatories<span>(in order of signing)</span></h2>
-      </header>
+        <div class="c-signatures">
+          <h2 class="c-signatures-title mzp-u-title-sm">Signatories</h2>
 
-      <ol class="c-signatures-list" role="list">
-      {% for sig in signatures %}
-        <li><cite>{{ sig.name }}</cite>{% if sig.affiliation %}, {{ sig.affiliation }}{% endif %}</li>
-      {% endfor %}
-      </ol>
+          <ol class="c-signatures-list" role="list">
+            <li><cite>Camille François</cite>, Columbia University</li>
+            <li><cite>Mark Surman</cite>, Mozilla</li>
+            <li><cite>Deborah Raji</cite>, UC Berkeley</li>
+            <li><cite>Maria Ressa Rappler</cite>, Nobel Peace Prize Laureate</li>
+            <li><cite>Stella Biderman</cite>, EleutherAI</li>
+            <li><cite>Alondra Nelson</cite>, Institute for Advanced Study</li>
+            <li><cite>Arthur Mensch</cite>, MistralAI</li>
+            <li><cite>Marietje Schaake</cite>, Stanford University</li>
+            <li><cite>Abeba Birhane</cite>, Mozilla Fellow</li>
+            <li><cite>Bruce Schneier</cite>, Berkman Center</li>
+            <li><cite>Mitchell Baker</cite>, Mozilla</li>
+            <li><cite>Bruno Sportisse</cite>, INRIA</li>
+            <li><cite>Anne Bouverot</cite>, Ecole Normale Supérieure</li>
+            <li><cite>Alexandra Reeve Givens</cite>, CDT</li>
+            <li><cite>Cedric O</cite>, MistralAI</li>
+            <li><cite>Andrew Ng</cite>, AI Fund</li>
+            <li><cite>Yann Lecun</cite>, Meta</li>
+            <li><cite>Jean-Noël Barrot</cite>, Minister for Digital Affairs, France</li>
+            <li><cite>Amba Kak</cite>, AI Now</li>
+            <li><cite>Joy Buolamwini</cite>, Algorithmic Justice League</li>
+            <li><cite>Julien Chaumond</cite>, Hugging Face</li>
+            <li><cite>Brian Behlendorf</cite>, Linux Foundation</li>
+            <li><cite>Eric Von Hippel</cite>, MIT Sloan School of Business</li>
+            <li><cite>Moez Draief</cite>, Mozilla.ai</li>
+            <li><cite>Pelonomi Moiloa</cite>, LelapaAI</li>
+            <li><cite>Philippe Beaudoin</cite>, Waverly</li>
+            <li><cite>Raffi Krikorian</cite>, Technically Optimistic</li>
+            <li><cite>Audrey Tang</cite>, Minister of Digital Affairs, Taiwan</li>
+            <li><cite>Jimmy Wales</cite>, Wikimedia Foundation</li>
+            <li><cite>Krishna Gade</cite>, Fiddler AI</li>
+            <li><cite>John Borthwick</cite>, Betaworks</li>
+            <li><cite>Karim Lakhani</cite>, Harvard Business School</li>
+            <li><cite>Stefano Maffulli</cite>, Open Source Initiative</li>
+            <li><cite>Arvind Narayanan</cite>, Princeton University</li>
+            <li><cite>Aviya Skowron</cite>, EleutherAI</li>
+            <li><cite>Catherine Stihler</cite>, Creative Commons</li>
+            <li><cite>Nabiha Syed</cite>, The Markup</li>
+            <li><cite>Tim O’Reilly</cite>, O'Reilly Media</li>
+            <li><cite>Nicole Wong</cite>, Former Deputy U.S. Chief Technology Officer</li>
+            <li><cite>Irina Rish</cite>, Mila - Quebec AI Institute</li>
+            <li><cite>Mohamed Nanabhay</cite>, Mozilla Ventures</li>
+            <li><cite>J. Bob Alotta</cite>, Mozilla</li>
+            <li><cite>Imo Udom</cite>, Mozilla</li>
+            <li><cite>Ayah Bdeir</cite>, Mozilla</li>
+            <li><cite>Blake Richards</cite>, McGill/Mila</li>
+            <li><cite>Andrea Renda</cite>, CEPS</li>
+            <li><cite>Jenia Jitsev</cite>, LAION/Juelich Supercomputing Center & Helmholtz Research Center Juelich</li>
+            <li><cite>Charles Gorintin</cite>, MistralAI</li>
+            <li><cite>Daniel J. Beutel</cite>, Flower Labs</li>
+            <li><cite>Nicholas Lane</cite>, Flower Labs</li>
+            <li><cite>Taner Topal</cite>, Flower Labs</li>
+            <li><cite>Aaron Gokaslan</cite>, Cornell University</li>
+            <li><cite>Shayne Longpre</cite>, MIT</li>
+            <li><cite>Luca Soldaini</cite>, Allen Institute for AI</li>
+            <li><cite>Joelle Pineau</cite>, Meta</li>
+            <li><cite>Michiel van de Panne</cite>, University of British Columbia</li>
+            <li><cite>Nawar Alsafar</cite>, Bytez Inc</li>
+            <li><cite>Holly Peck</cite>, Bytez Inc</li>
+            <li><cite>Susan Hendrickson</cite>, Harvard University</li>
+            <li><cite>Sharad Sharma</cite>, iSPIRT Foundation</li>
+            <li><cite>Andy Stepanian</cite>, The Sparrow Project</li>
+            <li><cite>Paul Keller</cite>, Open Future</li>
+            <li><cite>Goran Marby</cite>, Ybram Consulting</li>
+            <li><cite>Huu Nguyen</cite>, Ontocord.ai; LAION.ai</li>
+            <li><cite>Mike Bracken</cite>, Public Digital</li>
+            <li><cite>Elaheh Ahmadi</cite>, Themis AI</li>
+            <li><cite>Umakant Soni</cite>, AI Foundry, ART Venture Fund</li>
+            <li><cite>Saoud Khalifah</cite>, Mozilla</li>
+            <li><cite>Merouane Debbah</cite>, Khalifah University</li>
+            <li><cite>Felix Reda</cite>, Former Member of the European Parliament</li>
+            <li><cite>Brett Solomon</cite>, Access Now</li>
+            <li><cite>David Morar</cite>, Open Technology Institute</li>
+            <li><cite>Frédérick Douzet</cite>, IFG - GEODE, Université Paris 8</li>
+            <li><cite>Yacine Jernite</cite>, Hugging Face</li>
+            <li><cite>Anjney Midha</cite>, A16z</li>
+            <li><cite>Hessie Jones</cite>, LAION</li>
+            <li><cite>Jeffrey McGregor</cite>, Truepic Inc</li>
+            <li><cite>Victor Storchan</cite>, Mozilla.ai</li>
+            <li><cite>Sri Krishnamurthy</cite>, QuantUniversity</li>
+            <li><cite>Jorn Lyseggen</cite>, meltwater</li>
+            <li><cite>Corynne McSherry</cite>, Electronic Frontier Foundation</li>
+          </ol>
 
+          <p><a href="/letter/signatures/" class="mzp-c-button">See all {{ signatures.length }} signatures</a></p>
+        </div>
     </div>
   </section>
 </article>

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block page_title %}Joint Statement on AI Safety and Openness{% endblock %}
+{% block page_desc %}We are at a critical juncture in AI governance. To mitigate current and future harms from AI systems, we need to embrace openness, transparency, and broad access.{% endblock %}
+{% block page_image %}/img/social.png{% endblock %}
+
+{% block page_css %}<link rel="stylesheet" href="/css/style.scss">{% endblock %}
+
+{% set share_text = 'The future of #AI governance is here. Join a global community of policymakers, engineers, activists, and more in ensuring that AI remains open and accessible to all. \n\n' | urlencode %}
+{% set share_url = 'https://open.mozilla.org/letter/' %}
+
+{% block main_class %}signatures{% endblock %}
+
+{% block content %}
+<div id="top" class="c-letter-signatures mzp-l-content mzp-t-content-xl">
+  <header class="c-signatures-header">
+    <aside class="c-signature-count">
+      <strong>{{ signatures.length }}</strong> signatures
+    </aside>
+
+    <div>
+      <h1>Joint Statement on AI Safety and Openness</h1>
+      <a class="mzp-c-button" href="/letter/">Read the letter</a>
+      <a class="mzp-c-button mzp-t-secondary" href="/letter/#sign">Add your signature</a>
+    </div>
+  </header>
+
+  <h2 class="c-signatures-title mzp-u-title-sm">Signatories <span>(in order of signing)</span></h2>
+
+  <ol class="c-signatures-list" role="list">
+  {% for sig in signatures %}
+    <li><cite>{{ sig.name }}</cite>{% if sig.affiliation %}, {{ sig.affiliation }}{% endif %}</li>
+  {% endfor %}
+  </ol>
+
+  <p><a href="#top">Top of page</a></p>
+</div>
+{% endblock %}
