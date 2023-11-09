@@ -6,8 +6,12 @@
 
 const path = require("path");
 const HtmlBundlerPlugin = require("html-bundler-webpack-plugin");
+const fetch = require("sync-fetch");
 
 const isDev = process.env.NODE_ENV === "development";
+const basketDefaultURL = isDev ? "https://basket.allizom.org" : "https://basket.mozilla.org";
+const basketURL = process.env.BASKET_URL || basketDefaultURL;
+const signatures = fetch(`${basketURL}/petition/signatures.json`).json();
 
 module.exports = {
   mode: isDev ? "development" : "production",
@@ -100,6 +104,10 @@ module.exports = {
         filename: "css/[name].[contenthash:8].css",
       },
       loaderOptions: {
+        data: {
+          env: process.env,
+          signatures: signatures.signatures
+        },
         root: __dirname,
         preprocessor: 'nunjucks',
         preprocessorOptions: {

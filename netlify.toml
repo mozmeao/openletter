@@ -2,6 +2,15 @@
   publish = "dist"
   command = "npm run build"
 
+[context.production.environment]
+  BASKET_URL = "https://basket.mozilla.org"
+
+[context.branch-deploy.environment]
+  BASKET_URL = "https://basket.allizom.org"
+
+[context.deploy-preview.environment]
+  BASKET_URL = "https://basket.allizom.org"
+
 [[headers]]
   for = "/*"
   [headers.values]
