@@ -114,6 +114,11 @@ $font-path: '../../fonts';
     .c-signatures-list {
         columns: 2;
         column-gap: $spacing-lg;
+
+        li {
+            display: inline-block;
+            min-width: 100%;
+        }
     }
 }
 
