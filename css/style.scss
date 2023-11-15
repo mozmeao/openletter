@@ -112,14 +112,15 @@ $font-path: '../../fonts';
     }
 
     .c-signatures-list {
-        columns: 2;
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
         column-gap: $spacing-lg;
     }
 }
 
 @media #{$mq-lg} {
     .signatures .c-signatures-list {
-        columns: 4;
+        grid-template-columns: repeat(4, 25%);
     }
 }
 
