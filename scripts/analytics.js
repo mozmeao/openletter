@@ -11,7 +11,6 @@ window.dataLayer = window.dataLayer || [];
 
 
 if(!dntEnabled()) {
-    
     window.gtag = function () {
       window.dataLayer.push(arguments);
     };
@@ -19,10 +18,10 @@ if(!dntEnabled()) {
     const gaScript = document.createElement('script');
     gaScript.async = 'true';
     gaScript.type = 'text/javascript';
-    gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-74DYP283GP';
+    gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-GY6LYTE55B';
     const pageHead = document.getElementsByTagName('head')[0];
     pageHead.append(gaScript);
 
     window.gtag('js', new Date());
-    window.gtag('config', 'G-74DYP283GP');
+    window.gtag('config', 'G-GY6LYTE55B');
 }
