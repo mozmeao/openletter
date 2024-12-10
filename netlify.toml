@@ -51,5 +51,10 @@
 
 [[redirects]]
   from = "/"
-  to = "/letter/"
+  to = "/economists/"
+  force = true
+
+[[redirects]]
+  from = "/letter/"
+  to = "/ai-safety/"
   force = true

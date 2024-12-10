@@ -11,6 +11,76 @@ $font-path: '../../fonts';
 @import '@mozilla-protocol/core/protocol/css/templates/multi-column';
 @import '@mozilla-protocol/core/protocol/css/components/footer';
 
+:root {
+    // fonts
+    /* stylelint-disable value-keyword-case  */
+    --body-font-family: 'Mozilla Text', Inter, 'Helvetica Neue', Arial, X-LocaleSpecific, sans-serif;
+    --title-font-family: 'Mozilla Headline', Inter, 'Helvetica Neue', Arial, X-LocaleSpecific, sans-serif;
+    /* stylelint-enable */
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Mozilla Text';
+    font-style: normal;
+    font-weight: normal;
+    src:
+        url('/fonts/mozilla-text/MozillaText-Regular.woff2') format('woff2'),
+        url('/fonts/mozilla-text/MozillaText-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Mozilla Text';
+    font-style: italic;
+    font-weight: normal;
+    src:
+        url('/fonts/mozilla-text/MozillaText-Italic.woff2') format('woff2'),
+        url('/fonts/mozilla-text/MozillaText-Italic.woff') format('woff');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Mozilla Text';
+    font-style: normal;
+    font-weight: bold;
+    src:
+        url('/fonts/mozilla-text/MozillaText-Bold.woff2') format('woff2'),
+        url('/fonts/mozilla-text/MozillaText-Bold.woff') format('woff');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Mozilla Headline';
+    font-style: normal;
+    font-weight: bold;
+    src:
+        url('/fonts/mozilla-headline/MozillaHeadline-SemiBold.woff2') format('woff2'),
+        url('/fonts/mozilla-headline/MozillaHeadline-SemiBold.woff') format('woff');
+}
+
+/* Protocol overrides ---------------------------------------------------------- */
+body {
+    font-family: var(--body-font-family);
+    font-variant-ligatures: none;
+    line-height: 1.4;
+}
+
+h1, h2, h3, h4, h5,
+.mzp-u-title-sm {
+    font-family: var(--title-font-family);
+    font-variant-ligatures: none;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+}
+
+.mzp-c-footer-primary-logo > a {
+    background: transparent url('/img/logos/mozilla/lockup-white.svg') center center no-repeat;
+    background-size: 100px auto;
+}
+
+/* General styles -------------------------------------------------------------- */
 .c-letter-section {
     padding: $layout-sm 0;
 
@@ -37,9 +107,9 @@ $font-path: '../../fonts';
     text-align: center;
 
     strong {
-        @include font-mozilla;
         @include text-title-sm;
         display: block;
+        font-family: var(--body-font-family);
     }
 }
 
@@ -47,9 +117,9 @@ $font-path: '../../fonts';
     margin-bottom: $layout-sm;
 
     span {
-        @include font-base;
         @include text-body-sm;
         display: block;
+        font-family: var(--body-font-family);
         font-weight: normal;
     }
 }
