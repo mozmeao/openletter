@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+{% block page_title %}Joint Statement from Economists on the Importance of Open Source AI{% endblock %}
+{% block page_desc %}Leading economists agree that open source AI can be a critical driver of innovation, economic growth, and shared prosperity, and that governments and companies should take steps to promote open source AI.{% endblock %}
+{% block page_image %}/img/economists-social.png{% endblock %}
+
+{% block page_css %}<link rel="stylesheet" href="/css/style.scss">{% endblock %}
+
+{% set share_text = 'Leading economists agree that open source AI can be a critical driver of innovation, economic growth, and shared prosperity, and that governments and companies should take steps to promote open source AI. Read their letter here: \n\n' | urlencode %}
+{% set share_url = 'https://open.mozilla.org/economists/' %}
+
+{% block main_class %}main{% endblock %}
+
+{% block content %}
+<article class="c-letter">
+  <header class="c-letter-head c-letter-section mzp-t-background-secondary">
+    <div class="mzp-l-content mzp-t-content-md mzp-t-content-nospace">
+      <h1>Statement from Economists on the Importance of Open Source AI</h1>
+      <p><time datetime="2024-12-10">December 10, 2024</time></p>
+    </div>
+  </header>
+
+  <section class="c-letter-body c-letter-section">
+    <div class="mzp-l-content mzp-t-content-md mzp-t-content-nospace">
+      <p class="c-letter-intro">We, the undersigned economists and associated
+        experts, believe that open source AI could be a critical driver of
+        innovation, economic growth, and shared prosperity around the world if
+        companies and governments promote its adoption rather than restrict its
+        availability. Although there are many ways to define open source AI, when
+        AI systems promote reuse and interoperability, lower the barrier to entry
+        for startups, and increase corporate transparency and accountability,
+        they have the potential to accelerate innovation and competition in the
+        global economy.</p>
+
+      <p>History serves as a guide. As the commercial internet was coming to
+        fruition, many politicians were concerned that widespread adoption of
+        encryption would enable malicious actors to share information with each
+        other. Eventually, the promise of international e-commerce, which would
+        depend on strong, open-source encryption, made clear the economic benefits
+        of an open and secure Internet. Companies and governments supported the
+        fledgling internet that has created today’s booming digital economy.
+        While there continue to be concerns over the widespread availability of
+        encryption tools, most observers agree that the risks posited years ago
+        have not materialized in a way that compares to the economic benefits
+        the open internet has brought the world.</p>
+
+      <p>Today, it is reasonable to expect a similar positive impact from open
+        source AI. We believe open source AI, appropriately defined, will generate
+        many global economic benefits. For instance, it will lower the barrier
+        to entry of innovative AI firms to enter with entirely new products. New
+        entrants may further challenge the dominance of market incumbents, and
+        thereby increase competition in the AI space. A wider range of organizations
+        will be able to participate in building custom AI applications to improve
+        their operations and better serve customers. For example nonprofits and
+        social sector organizations may find the cost of closed AI models to be
+        prohibitive, and the decision to procure access to expensive AI models
+        may be difficult when the intended application is new and unproven. The
+        transparency and collaboration that is fostered through open source AI
+        will lead to new and better organizational structures to harness the
+        benefits of innovation across sectors. Open source AI initiatives can
+        utilize shared infrastructure and technological interoperability, which
+        will increase global contributions, reach, and impact of these advancements.
+        These are a few examples of the many effects of open source AI that, when
+        taken together, have the potential to generate global economic benefits.</p>
+
+      <p>These myriad benefits are not without risks. Some companies and regulators
+        have raised safety concerns related to open source AI. It is worth
+        disentangling the two different types of safety that are broadly discussed:
+        (1) Ensuring that developers and users of AI have the products and tools
+        they need to make its application safe, and (2) Ensuring AI cannot be
+        misused by malicious actors. For the former, open source AI is generally
+        a boon, as it enables and incentivizes companies to compete to create
+        safer and better products, and helps developers, researchers, regulators,
+        civil society, and the public with auditing and assessing their safety.
+        For the latter, however, there is vigorous debate about whether and how
+        increased access to AI systems creates new risks.</p>
+
+      <p>Open source AI clearly has significant competition and innovation benefits.
+        We acknowledge that different factions with the power to incentivize or
+        block development of open source AI systems will need to manage these
+        concerns to harness these benefits. Unique approaches to managing trade-offs
+        between economic potential and these concerns will be vital for different
+        sectoral regulators. For instance, competition and consumer protection
+        agencies may be strongly in favor of open source AI, while national
+        security entities may work to mitigate malicious usage risks in a way
+        that has the least impact on the open source AI ecosystem.</p>
+
+      <p>Overall, for very low cost, we believe open source AI will have an
+        outsized positive impact on the global economy. We urge governments and
+        companies to proactively promote, rather than restrict, developments that
+        foster open source AI.</p>
+
+      <p><i>We thank the Mozilla Foundation and Keystone Strategy for their support
+        in convening the signatories of this letter.</i></p>
+
+      <aside class="c-share">
+        <button class="mzp-c-button mzp-t-secondary mzp-t-sm js-mastodon-share"
+          data-share-url="{{ share_url }}"
+          data-share-text="{{ share_text }}">
+          Share on Mastodon
+        </button>
+
+        <a href="https://twitter.com/intent/tweet/?text={{ share_text }}&amp;url={{ share_url }}&amp;via=mozilla"
+          rel="external nofollow noopener" target="_blank"
+          class="mzp-c-button mzp-t-secondary mzp-t-sm">
+          Share on X
+        </a>
+      </aside>
+    </div>
+  </section>
+
+  <section id="signatures" class="c-letter-signatures c-letter-section">
+    <div class="mzp-l-content mzp-t-content-md mzp-t-content-nospace">
+      <h2 class="c-signatures-title mzp-u-title-sm">Signed by</h2>
+
+      <ol class="c-signatures-list" role="list">
+        <li><cite>Alessandro Acquisti</cite>, Carnegie Mellon University</li>
+        <li><cite>Ajay Agrawal</cite>, University of Toronto</li>
+        <li><cite>Susan Athey</cite>, Stanford University</li>
+        <li><cite>David Autor</cite>, Massachusetts Institute of Technology</li>
+        <li><cite>Jim Bessen</cite>, Boston University</li>
+        <li><cite>Daniel Björkegren</cite>, Columbia University</li>
+        <li><cite>Giacomo Calzolari</cite>, European University Institute</li>
+        <li><cite>Diane Coyle</cite>, University of Cambridge</li>
+        <li><cite>Melissa Dell</cite>, Harvard University</li>
+        <li><cite>Ibrahim Elbadawi</cite>, Economic Research Forum</li>
+        <li><cite>Joshua Gans</cite>, University of Toronto</li>
+        <li><cite>Avi Goldfarb</cite>, University of Toronto</li>
+        <li><cite>Claudia Goldin</cite>, Harvard University</li>
+        <li><cite>Karim Lakhani</cite>, Harvard University</li>
+        <li><cite>Frank Levy</cite>, Massachusetts Institute of Technology</li>
+        <li><cite>Zachary Lipton</cite>, Carnegie Mellon University</li>
+        <li><cite>Sendhil Mullainathan</cite>, Massachusetts Institute of Technology</li>
+        <li><cite>Abhishek Nagaraj</cite>, University of California, Berkeley</li>
+        <li><cite>Daniel Rock</cite>, University of Pennsylvania</li>
+        <li><cite>Robert Seamans</cite>, New York University</li>
+        <li><cite>Steve Tadelis</cite>, University of California, Berkeley</li>
+        <li><cite>Adel Ben Youssef</cite>, Côte d'Azur University</li>
+      </ol>
+    </div>
+  </section>
+
+</article>
+{% endblock %}
+
+{% block js %}
+  <script src="/scripts/mastodon.js"></script>
+{% endblock %}
